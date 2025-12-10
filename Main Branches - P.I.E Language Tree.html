@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>P.I.E Language Tree - Main Branches</title>
-    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
     <meta charset="utf-8">
     <style>
         body {
@@ -16,13 +14,6 @@
             line-height: 1.6;
         }
 
-        table {
-            border-collapse: collapse;
-            border: 2px solid #ffffff;
-            min-width: 300px;
-            height: fit-content;
-        }
-
         th, td {
             border: 1px solid #ffffff;
             padding: 10px 14px;
@@ -33,20 +24,39 @@
             background-color: #424242;
         }
 
-        h1 {
-            width: 100%;
+        .title-section {
+            text-align: center;
+            padding-top: 20px;     /* distance from very top */
+            padding-bottom: 30px;  /* distance to the table */
+        }
+
+        .title-section h1 {
+            margin: 0;
+            margin-bottom: 100px;   /* distance between title & subtitle */
+            color: white;
+        }
+
+        .title-section h2 {
+            margin: 0;
+            color: white;
+        }
+
+        /* Layout for the table */
+        .content {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
         }
     </style>
 </head>
 <body style="background-color:black">
-    <div style="color: white">
-        <h1>Main Branches</h1>
-        <p>Here are the main branches of the P.I.E Language Tree (currently living):</p>
-        <p>Click on the image below to return to the main page.</p>
-        <a href="Homepage.html" 
-         style="text-align: center"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg" 
-        style="display: block; width: 180px; height: 240px"></a>
+
+        <div class="title-section">
+        <h1>Proto-Indo-European Language Tree</h1>
+        <h2>P.I.E - Main Branches</h2>
     </div>
+
+<div class="content">
     <table>
         <tr style="color: white">
             <th>Branches</th>
@@ -107,5 +117,14 @@ I specifically mean "Others" since these languages are the only surviving member
 Armenian (Armenian),
 Albanian (Albanoid/Albanic)</td></tr>
     </table>
+</div>
+<footer>
+<nav class="footer-nav">
+<a href="Homepage.html">Homepage</a>
+<a href="History.html">History</a>
+<a href="Core Vocab.html">Core Vocab</a>
+<a href="default.asp">Implementation of JS</a>
+</nav>
+</footer>
 </body>
 </html>
