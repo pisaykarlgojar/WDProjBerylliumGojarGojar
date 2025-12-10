@@ -15,25 +15,140 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-  background-color: #964B00;
+  background-color: rgb(2, 181, 2);
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.map-image {
+    display: block;
+    margin: 0 auto;
+    width: 1024px;
+    height: 710px;
+}
+
+.intro-text {
+    text-align: center;
+    max-width: 90%;
+    margin: 20px auto;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    padding: 20px;
+}
+
+.footer-nav a {
+    background-color: green;
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: 
+        background-color 0.25s,
+        transform 0.25s,
+        box-shadow 0.5s;
+}
+
+.footer-nav a:hover {
+    background-color: rgb(2, 197, 2);
+    transform: scale(1.3);
+    box-shadow: 0 0 12px rgb(1, 255, 2);
+}
+
+#pieButton {
+    background-color: rgb(26, 143, 26); 
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.25s;
+    font-family: Arial, sans-serif;
+}
+
+#pieButton:hover {
+    background-color: #22c022;
+    transform: scale(1.08);
+    box-shadow: 0 0 12px #22c022;
+}
+
+#pieButton:active {
+    transform: scale(0.96);
+    background-color: #168016;
+}
+
+#pieOutput {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
 }
 </style>
 </head>
+
 <body style="background-color:black">
-<h1 style="color:white; text-align:center;">Homepage</h1>
-  <h3 style="color:white; text-align:center;">Q2 Project Proposal - By Kyle and Karl Gojar</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indo-European_languages_map.png" style="display: block; margin: 0 auto; width: 1024px; height: 710px;">
-<h2 style="color:white; text-align:center;"><b> Greetings, reader! Welcome to the Homepage. This website will (mainly) be be about the Indo-European Language Family Tree. The following webpages feature the 8 major subdivisions of P.I.E. In addition, it will include the historical divergence into the descendants, and the PIE vocabulary, with fundemental terms reconstructed from said descendants.</b></h2>
-<div>
-<p><b>OUTLINE:</b></p>
+<h1 style="color:white; text-align:center;">Proto-Indo-European Language Tree</h1>
+<h3 style="color:white; text-align:center;">Homepage</h3>
+<h3 style="color:white; text-align:center;">Q2 Project - By Kyle and Karl Gojar</h3>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indo-European_languages_map.png" 
+style="display: block; margin: 0 auto; width: 1024px; height: 710px;">
+
+<h2 style="color:white; text-align:center;">
+<b> Greetings, reader! Welcome to the Homepage. This website will (mainly) be be about the Indo-European Language Family Tree. The following webpages feature the 8 major subdivisions of P.I.E. In addition, it will include the historical divergence into the descendants, and the PIE vocabulary, with fundemental terms reconstructed from said descendants.</b>
+</h2>
+
+<div style="text-align:center; margin-top: 30px;">
+    <button id="pieButton">Click this button to generate a P.I.E. word, and its modern meaning!</button>
+    <p id="pieOutput"></p>
 </div>
+
+<footer>
+<nav class="footer-nav">
 <a href="Main Branches - P.I.E Language Tree.html">Main Branches</a>
-<div>
 <a href="History.html">History</a>
-</div>
-<a href="Core Vocab.html">Core Vocab (Kinship, Numerals, Body Parts)</a>
-<div>
+<a href="Core Vocab.html">Core Vocab</a>
 <a href="default.asp">Implementation of JS</a>
-</div>
+</nav>
+</footer>
+
+<!-- FIXED SCRIPT: moved to bottom -->
+<script>
+const pieWords = [
+    {word: "*méh₂tēr", meaning: "mother"},
+    {word: "*ph₂tḗr", meaning: "father"},
+    {word: "*bhréh₂tēr", meaning: "brother"},
+    {word: "*swésōr", meaning: "sister"},
+    {word: "*h₁néwn̥", meaning: "nine"},
+    {word: "*dḗḱm̥", meaning: "ten"},
+    {word: "*wódr̥", meaning: "water"},
+    {word: "*h₂ówis", meaning: "sheep"},
+    {word: "*gʷḗn", meaning: "woman"},
+    {word: "*h₂érōm", meaning: "air/sky"}
+];
+
+document.getElementById("pieButton").addEventListener("click", function() {
+    const random = pieWords[Math.floor(Math.random() * pieWords.length)];
+    document.getElementById("pieOutput").innerHTML =
+        `<b>${random.word}</b> — ${random.meaning}`;
+});
+</script>
+
 </body>
 </html>
