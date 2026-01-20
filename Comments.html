@@ -1,0 +1,44 @@
+<!-- comment form -->
+<form id="commentForm">
+    <input type="text" name="username" placeholder="Enter your username (optional)" />
+    <textarea name="comment" placeholder="Write your comment..."></textarea>
+    <button type="submit">Post</button>
+</form>
+
+<!-- where comments will appear -->
+<div id="comments"></div>
+
+<script>
+    // In-memory storage for comments
+    const commentsData = [];
+
+    document.getElementById('commentForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = e.target.username.value || "anonymous";
+        const comment = e.target.comment.value;
+
+        if (!comment.trim()) {
+            alert("Comment cannot be empty!");
+            return;
+        }
+
+        // Add the comment to the in-memory array
+        commentsData.push({ username, text: comment });
+
+        // Reload comments
+        loadComments();
+
+        // Clear the form
+        e.target.reset();
+    });
+
+    function loadComments() {
+        // Render comments from the in-memory array
+        document.getElementById('comments').innerHTML = commentsData
+            .map(c => `<p><strong>${c.username}:</strong> ${c.text}</p>`)
+            .join('');
+    }
+
+    // Initial load (empty at first)
+    loadComments();
+</script>
