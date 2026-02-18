@@ -1,176 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> P.I.E Language Tree</title>
 <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
-<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-a:link, a:visited {
-  background-color: green;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover, a:active {
-  background-color: rgb(2, 181, 2);
-}
-
 body {
-    font-family: Arial, sans-serif;
-    color: white;
-    margin: 0;
-    padding: 0;
-
-    background-image: url("https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/1/7/1420647015259/3628f5a3-9110-4c01-bcfc-9b4ca9c00bd5-2060x1340.jpeg?width=1900&dpr=2&s=none&crop=none");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  font-family: "Times New Roman", "Serif";
+  background-color: #224f64
 }
 
-header {
-    text-align: center;
-    padding: 20px 0;
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
-.map-image {
-    display: block;
-    margin: 0 auto;
-    width: 1024px;
-    height: 710px;
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.1s;
 }
 
-.intro-text {
-    text-align: center;
-    max-width: 90%;
-    margin: 20px auto;
+.sidebar a:hover {
+  color: #133646;
 }
 
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 200px;
-    padding: 20px;
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
-.footer-nav a {
-    background-color: green;
-    color: white;
-    padding: 14px 25px;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    transition: 
-        background-color 0.25s,
-        transform 0.25s,
-        box-shadow 0.5s;
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #224f64;
+  color: #ffffff;
+  font-size: 30px;
+  padding: 10px 15px;
+  border: none;
 }
 
-.footer-nav a:hover {
-    background-color: rgb(2, 197, 2);
-    transform: scale(1.3);
-    box-shadow: 0 0 12px rgb(1, 255, 2);
+.openbtn:hover {
+  background-color: #D4CDBB;
+  color: #000000;
 }
 
-#pieButton {
-    background-color: rgb(26, 143, 26); 
-    color: white;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.25s;
-    font-family: Arial, sans-serif;
+#main {
+  transition: margin-left 1s;
+  padding: 16px;
+  text-align: center;
 }
 
-#pieButton:hover {
-    background-color: #22c022;
-    transform: scale(1.08);
-    box-shadow: 0 0 12px #22c022;
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
 }
 
-#pieButton:active {
-    transform: scale(0.96);
-    background-color: #168016;
-}
-
-#pieOutput {
-    margin-top: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-}
+h2 {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
 </style>
 </head>
+<body>
 
-<body style="background-color:black">
-<h1 style="color:white; text-align:center;">Proto-Indo-European Language Tree</h1>
-<h3 style="color:white; text-align:center;">Homepage</h3>
-<h3 style="color:white; text-align:center;">Q2 Project - By Kyle and Karl Gojar</h3>
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indo-European_languages_map.png" 
-style="display: block; margin: 0 auto; width: 1024px; height: 710px;">
-
-<h3 style="color:white; text-align:center;">
-<b> Greetings, reader! Welcome to the Homepage. This website will (mainly) be be about the Indo-European Language Family Tree. The following webpages feature the 8 major subdivisions of P.I.E. In addition, it will include the historical divergence into the descendants, and the PIE vocabulary, with fundemental terms reconstructed from said descendants.</b>
-<b> Additionally, we will acknowledge what is the significance found in the website. (As found in the History webpage.)</b>
-</h3>
-
-<h3 style="color:white; text-align:center;">
-<b> As you may be wondering, what is Proto-Indo-European? P.I.E., for short, is the reconstructed, most recent common ancestor of the Indo-European languages. It is not directly
-    attested by any written records, but has been partially reconstructed by linguists through the comparative method. Originating in 5000 BC, P.I.E eventually dispered beyond
-    the Pontic-Caspian steppe, and into both Europe and Southern Asia, evolving into the various majority of languages known today, such as Armenian, Albanian, English, Greek,
-    Hindustani, Latin, Lithuanian, Persian, Russian, Welsh, and many more! 
-    
-    Feel free to explore the other webpages, and learn more about the Proto-Indo-European Language Family Tree! </b>
-
-<div style="text-align:center; margin-top: 30px;">
-    <button id="pieButton">Click this button to generate a P.I.E. word, and its modern meaning!</button>
-    <p id="pieOutput"></p>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">→</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Homepage.html">Homepage</a>
+  <a href="#">Main Braches</a>
+  <a href="#">History</a>
+  <a href="#">Core Vocab</a>
+  <a href="#">Implementation of JS</a>
+  <a href="#">Sign-up</a>
+  <a href="#">Comment Here!</a>
 </div>
 
-<footer>
-<nav class="footer-nav">
-<a href="Main Branches - P.I.E Language Tree.html">Main Branches</a>
-<a href="History.html">History</a>
-<a href="Core Vocab.html">Core Vocab</a>
-<a href="Implementation of JS.html">Implementation of JS (And Citations!)</a>
-</nav>
-</footer>
+<div>
+  <button class="openbtn" onclick="openNav()">☰</button>
+</div>
+<div id="main">
+  <h1 style="color: #2E677D; background-color: #D4CDBB; border: 5px solid #000; margin-left: 575px; margin-right: 575px; margin-top: -25px; text-align: center;">Homepage</h1>
+  <h2>Greetings, reader! Welcome to the Homepage. This website will (mainly) be be about the Indo-European Language Family Tree. This features the 8 major groups, it will include the historical divergence into the descendants, and the PIE vocabulary, with fundemental terms reconstructed from said descendants.</h2>
+  <img src="https://sssscomic.com/comicpages/196.jpg" 
+  style="display: block; margin: 0 auto; width: 1000px; height: 1409px; text-align: center; border: 5px solid #000;">
+  <h2>... Wait, what IS P.I.E?</h2>
+  <h2>Description: P.I.E is defined as the common ancestor of the Indo-European Languages. It's geographically spread out, extending between most of Europe and nearly half of Asia. Their influence is so dominant, Basque, Turkish, and the Uralic languages (shown above) are the few exclusions in Europe. For more info, navigate through the sidebar!</h2>
+</div>
 
-<!-- FIXED SCRIPT: moved to bottom -->
 <script>
-const pieWords = [
-    {word: "*méh₂tēr", meaning: "mother"},
-    {word: "*ph₂tḗr", meaning: "father"},
-    {word: "*bhréh₂tēr", meaning: "brother"},
-    {word: "*swésōr", meaning: "sister"},
-    {word: "*swéḱs", meaning: "six"},
-    {word: "*septḿ̥", meaning: "seven"},
-    {word: "*wódr̥", meaning: "water"},
-    {word: "*h₂ówis", meaning: "sheep"},
-    {word: "*gʷḗn", meaning: "woman"},
-    {word: "*h₂érōm", meaning: "air/sky"},
-    {word: "*Dyḗus ph₂tḗr", meaning: "sky father/father daylight"},
-    {word: "*h₂éǵros", meaning: "acre/field"},
-    {word: "*h₁rowdʰós", meaning: "red"},
-    {word: "*h₃dónts", meaning: "tooth"}
-];
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
 
-document.getElementById("pieButton").addEventListener("click", function() {
-    const random = pieWords[Math.floor(Math.random() * pieWords.length)];
-    document.getElementById("pieOutput").innerHTML =
-        `<b>${random.word}</b> — ${random.meaning}`;
-});
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
 </script>
-
 </body>
 </html>
-
-
-
-
-
