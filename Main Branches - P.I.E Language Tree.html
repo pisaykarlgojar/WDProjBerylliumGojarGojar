@@ -1,112 +1,173 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            color: white;
-            margin: 0;
-            padding: 0;
+<link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-            background-image: url("https://lh3.googleusercontent.com/-GI4DFPuTDTo/VSjV9xFD8fI/AAAAAAAAN5k/1xT-dkfZU6Y/s0/2015-04-11_10-06-07.jpg?profile=RESIZE_710x");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        ul {
-            line-height: 1.6;
-        }
-
-        th, td {
-            border: 1px solid #ffffff;
-            padding: 10px 14px;
-            text-align: center;
-            background-color: black;
-        }
-
-        th {
-            background-color: #424242;
-        }
-
-        .title-section {
-            text-align: center;
-            padding-top: 20px;     /* distance from very top */
-            padding-bottom: 30px;  /* distance to the table */
-        }
-
-        .title-section h1 {
-            margin: 0;
-            margin-bottom: 100px;   /* distance between title & subtitle */
-            color: rgb(0, 0, 0);
-        }
-
-        .title-section h2 {
-            margin: 0;
-            color: rgb(0, 0, 0);
-        }
-
-        .footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 200px;
-    padding: 20px;
+<style>
+body {
+  font-family: "Times New Roman";
+  background-color: #000000;
+  margin: 0;
 }
 
-.footer-nav a {
-    background-color: green;
-    color: white;
-    padding: 14px 25px;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    transition: 
-        background-color 0.25s,
-        transform 0.25s,
-        box-shadow 0.5s;
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgb(41, 41, 41);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
-.footer-nav a:hover {
-    background-color: rgb(2, 197, 2);
-    transform: scale(1.3);
-    box-shadow: 0 0 12px rgb(1, 255, 2);
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #ffffff;
+  display: block;
 }
 
-.page-container {
-    display: flex;
+.sidebar a:hover {
+  color: #95baca;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 36px;
+}
+
+
+.openbtn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  font-size: 28px;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+
+#page {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+
+h1 {
+align-self: center;
+color: white; 
+background-color: rgb(67, 67, 67); 
+border: solid 8px #910f16; 
+padding: 6px 10px;
+margin-bottom: 12px; 
+display: inline-block;
+}
+
+.text {
+  max-width: 560px;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  margin-top: 60px;
+}
+
+.branch-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  width: 100%;
+}
+
+.container img {
+  width: 420px;
+  max-width: 90%;
+  height: auto;
+}
+
+
+@media (max-width: 900px) {
+  .branch-row {
     flex-direction: column;
     align-items: center;
-    padding-bottom: 40px; /* distance above footer */
+  }
 }
-
-/* Layout for the table */
-.content 
-{
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-    </style>
+</style>
 </head>
-<div class="page-container">
-<body style="background-color:r black">
 
-        <div class="title-section">
-        <h1>Proto-Indo-European Language Tree</h1>
-        <h2 style="color: rgb(0, 0, 0)">P.I.E - Main Branches</h2>
-    </div>
+<body>
 
-<div class="content">
-    <table>
-        <tr style="color: white">
-            <th>Branches (8) </th>
-            <th>Characteristics</th>
-            <th>Daughter Languages</th>
-        </tr>
-        <tr style="color:#910f16"><td>Germanic</td><td>
-The Germanic languages formed their branch by collectively changing certain phonetics known as Grimm's and Verner's laws (e.g., the "p" sound into the "f" sound, as in Latin's "pater" to English's "father").
-        </td><td>English,
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">→</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Homepage.html">Homepage</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Main Branches - P.I.E Language Tree.html">Main Branches</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/History.html">History</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Core Vocab.html">Core Vocab</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Implementation of JS.html">Implementation of JS</a>
+  <a href="#">Sign-up</a>
+  <a href="#">Comment Here!</a>
+</div>
+
+<div id="page">
+
+    <button id="menuBtn" class="openbtn" onclick="openNav()">☰</button>
+
+<div style="text-align: center;">
+
+<h1 style="
+color: white; 
+background-color: rgb(67, 67, 67); 
+padding: 6px 20px;
+margin: 20px auto;
+display: inline-block;
+text-align: center;
+width: fit-content;">
+Main Branches
+</h1>
+
+</div>
+
+  <div class="container">
+    <div class="text">
+      <h2
+      style="color: #000000; 
+      background-color: gray; 
+      border: solid 8px #910f16; 
+      padding: 6px 10px; margin-bottom: 12px; 
+      display: inline-block;">Germanic</h2>
+
+      <p 
+      style="background-color: gray;
+      border: solid 8px #910f16;
+      padding: 10px;
+      margin: 0;
+      line-height: 1.5;">
+        The Germanic branch is the largest of the three main branches of the Indo-European language family. Germanic is the most spoken branch of the Indo-European language family,
+        largely due to English becoming the global lingua franca. Originating somewhere in Denmark, the Germanic
+        languages diverged through phonetic shifts known as Grimm’s and Verner’s
+        Laws (for example, Latin “pater” in comparison to English “father”). English,
 Scots,
 German,
 Luxembourgish,
@@ -115,63 +176,123 @@ Dutch,
 Swedish,
 Danish,
 Norwegian,
-Icelandic</td></tr>
-        <tr style="color:#ffb32f"><td>Italic (Romance)</td><td>
-The Italic branch originally consisted of several languages alongside Latin, such as Faliscan and Oscan. Unfortunately, these other languages have became extinct, and that Latin was the one to evolve into the Romance languages due to the extent of the Roman Empire. 
-        </td><td>Ecclesiastical Latin,
+Icelandic
+      </p>
+    </div>
+
+    <img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/0/03/Germanic_tribes_%28750BC-1AD%29.png" style="border: solid 10px #910f16;">
+
+    <div class="text">
+      <h2 
+      style="color: #000000; 
+      background-color: gray; 
+      border: solid 8px #ffb32f; 
+      padding: 6px 10px; margin-bottom: 12px; 
+      display: inline-block;"
+      >Italic (Romance)</h2>
+      <p
+      style="color: #000000; 
+      background-color: gray; 
+      border: solid 8px #ffb32f; 
+      padding: 6px 10px; margin-bottom: 12px; 
+      display: inline-block; line-height: 1.5;">
+        The Italic branch, also known as Romance languages, evolved from Latin,
+        the language of the Roman Empire. As the empire expanded, Latin spread
+        across Europe, eventually diverging into distinct languages like Spanish,
+        French, Italian, Portuguese, and Romanian. These languages share a common
+        vocabulary and grammar due to their Latin roots. Languages: Latin,
 Spanish,
 French,
 Italian,
 Portuguese,
 Romansh,
+Romagnol,
 Romanian,
-Catalan,
-Emilio-Romagnol</td></tr>
-        <tr style="color: #0f4fdb"><td>Balto-Slavic</td><td>
-Due to the similar traits in vocabulary, phonetics, and grammar, the Baltic and Slavic languages are usually grouped together. Lithuanian is the most conservative living Indo-European language, keeping many linguistic features lost to time, yet is proven useful in reconstructing PIE.
-        </td><td>Latvian,
+Catalan
+      </p>
+    </div>
+
+    <img src="https://cdn.britannica.com/42/2042-050-BB63526C/Distribution-Romance-languages-Europe.jpg?w=300" style="border: solid 10px #ffb32f;">
+
+    <div class="text">
+      <h2 
+      style="color: #000000; 
+      background-color: gray; 
+      border: solid 8px #0f4fdb; 
+      padding: 6px 10px; margin-bottom: 12px; 
+      display: inline-block;"
+      >Balto-Slavic</h2>
+      <p
+      style="color: #000000; 
+      background-color: gray; 
+      border: solid 8px #0f4fdb; 
+      padding: 6px 10px; margin-bottom: 12px; 
+      display: inline-block; line-height: 1.5;">
+        Due to the similar traits in vocabulary, phonetics, and grammar, the Baltic and Slavic languages are usually grouped together. The Slavic branch is the majority, containing Russian, Bulgarian, etc.
+        Meanwhile Baltic comprises of Lithuanian and Latvian. Lithuanian is the most conservative living Indo-European language, keeping many linguistic features lost to time, yet is proven useful in reconstructing PIE.
+        Languages: Latvian,
 Lithuanian,
 Russian,
+Belarusian,
 Polish,
 Czech,
 Slovak,
 Slovene,
-Belarusian,
+Macedonian,
 Serbo-Croatian,
 Ukrainian,
-Bulgarian</td></tr>
-        <tr style="color: #5608c9"><td>Indo-Iranian</td><td>
-The biggest branch of the Indo-European family. It is split further into the Indo-Aryan and Iranian sub-branches. This branch is widespread within South Asia, from the ouskirts of Iran to within the islands of Sri Lanka and the Maldives. The largest of these languages is Hindi, which, along with Urdu, is part of the pluricentral language called Hindustani.
-        </td><td>Persian,
-Kurdish,
-Pashto,
-Hindustani,
-Bengali,
-Nepali,
-Sinahala,
-Dhivehi</td></tr>
-        <tr style="color: rgb(48, 142, 70)"><td>Celtic</td><td>
-The Celtic languages are known for their unusual pronunciation in comparison to their Anglicized spellings. Despite that, they have a rich plethora of literature, with Irish and Welsh being the most prominent surviving Celtic languages.
-        </td><td>Welsh,
-Irish,
-Scottish Gaelic</td></tr>
-        <tr style="color: gray"><td>Others (Last 3)</td><td>
-It specifically is labeled as "Others" since these languages are the only sole/surviving members of their own branch.
-        </td><td>Greek (Hellenic),
-Armenian (Armenian),
-Albanian (Albanoid/Albanic)</td></tr>
-    </table>
+Bulgarian
+      </p>
+    </div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Balto-Slavic_lng.png" style="border: solid 10px #0f4fdb;">
+
+    <div class="text">
+      <h2 
+      style="color: #000000; 
+      background-color: gray; 
+      border: solid 8px #5608c9; 
+      padding: 6px 10px; margin-bottom: 12px; 
+      display: inline-block;"
+      >Indo-Iranian</h2>
+      <p
+      style="color: #000000; 
+      background-color: gray; 
+      border: solid 8px #5608c9; 
+      padding: 6px 10px; margin-bottom: 12px; 
+       display: inline-block; line-height: 1.5;">
+      The biggest branch and THE most diverse of the Indo-European family. Over HUNDREDS of these languages are grouped into the Indo-Aryan and Iranian sub-branches.
+      This branch is widespread within South Asia, from the ouskirts of Iranian plateau, to the Indian Subcontinent, to within the islands of Sri Lanka and the Maldives.
+      The largest of these languages is Hindi, which, along with Urdu, is part of the pluricentral language called Hindustani.
+      </p>
+    </div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Lenguas_indoiranias.PNG" style="border: solid 10px #5608c9;">
+  </div>
+
+
 </div>
-</div>
-<footer>
-<nav class="footer-nav">
-<a href="Homepage.html">Homepage</a>
-<a href="History.html">History</a>
-<a href="Core Vocab.html">Core Vocab</a>
-<a href="Implementation of JS.html">Implementation of JS (And Citations!)</a>
-</nav>
-</footer>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("page").style.marginLeft = "250px";
+
+  const btn = document.getElementById("menuBtn");
+  btn.innerHTML = "←";
+  btn.style.display = "none";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("page").style.marginLeft = "0";
+
+  const btn = document.getElementById("menuBtn");
+  btn.innerHTML = "☰";
+  btn.style.display = "block";
+}
+
+</script>
+
 </body>
 </html>
-
-
