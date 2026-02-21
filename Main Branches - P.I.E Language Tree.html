@@ -9,6 +9,10 @@ body {
   font-family: "Times New Roman";
   background-color: #000000;
   margin: 0;
+  background-image: url("https://www.worldhistory.org/uploads/images/2613.png?v=1765214826-0");
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
 }
 
 .sidebar {
@@ -18,7 +22,7 @@ body {
   z-index: 2;
   top: 0;
   left: 0;
-  background-color: rgb(41, 41, 41);
+  background-color: black;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -33,7 +37,7 @@ body {
 }
 
 .sidebar a:hover {
-  color: #95baca;
+  color: #133646;
 }
 
 .closebtn {
@@ -42,7 +46,6 @@ body {
   right: 20px;
   font-size: 36px;
 }
-
 
 .openbtn {
   position: fixed;
@@ -62,27 +65,25 @@ body {
   color: #000;
 }
 
-
 #page {
   transition: margin-left 0.5s;
   padding: 16px;
 }
 
-
 h1 {
-align-self: center;
-color: white; 
-background-color: rgb(67, 67, 67); 
-border: solid 8px #910f16; 
-padding: 6px 10px;
-margin-bottom: 12px; 
-display: inline-block;
+  color: white;
+  background-color: rgb(67, 67, 67);
+  padding: 6px 20px;
+  margin: 20px auto;
+  display: inline-block;
+  text-align: center;
+  width: fit-content;
+  border: solid 8px rgb(0, 0, 0);
 }
 
 .text {
   max-width: 560px;
 }
-
 
 .container {
   display: flex;
@@ -107,12 +108,22 @@ display: inline-block;
   height: auto;
 }
 
-
 @media (max-width: 900px) {
   .branch-row {
     flex-direction: column;
     align-items: center;
   }
+}
+
+h2, p {
+  background-color: rgb(67, 67, 67);
+  color: white
+}
+
+p {
+  padding: 10px;
+  margin: 0;
+  line-height: 1.5;
 }
 </style>
 </head>
@@ -131,153 +142,157 @@ display: inline-block;
 </div>
 
 <div id="page">
-
-    <button id="menuBtn" class="openbtn" onclick="openNav()">☰</button>
-
-<div style="text-align: center;">
-
-<h1 style="
-color: white; 
-background-color: rgb(67, 67, 67); 
-padding: 6px 20px;
-margin: 20px auto;
-display: inline-block;
-text-align: center;
-width: fit-content;">
-Main Branches
-</h1>
-
+  <button id="menuBtn" class="openbtn" onclick="openNav()">☰</button>
 </div>
 
-  <div class="container">
-    <div class="text">
-      <h2
-      style="color: #000000; 
-      background-color: gray; 
-      border: solid 8px #910f16; 
-      padding: 6px 10px; margin-bottom: 12px; 
-      display: inline-block;">Germanic</h2>
+<div style="text-align: center;">
+  <h1>Main Branches</h1>
+  <h2 style="background-color: #00000000; color:#000">Meet the groups!</h2>
+</div>
 
-      <p 
-      style="background-color: gray;
-      border: solid 8px #910f16;
-      padding: 10px;
-      margin: 0;
-      line-height: 1.5;">
-        The Germanic branch is the largest of the three main branches of the Indo-European language family. Germanic is the most spoken branch of the Indo-European language family,
-        largely due to English becoming the global lingua franca. Originating somewhere in Denmark, the Germanic
-        languages diverged through phonetic shifts known as Grimm’s and Verner’s
-        Laws (for example, Latin “pater” in comparison to English “father”). English,
-Scots,
-German,
-Luxembourgish,
-Afrikaans,
-Dutch,
-Swedish,
-Danish,
-Norwegian,
-Icelandic
-      </p>
+<div>
+  <div class="container">
+
+    <div class="text">
+    <h2 style="border: solid 8px #910f16; padding: 6px 10px; margin-bottom: 12px; margin: 20px auto; ">Germanic</h2>
+    <p style="border: solid 8px #910f16;">
+      The Germanic branch is the largest of the three main branches of the Indo-European language family. Germanic is the most spoken branch of the Indo-European language
+      family, largely due to English becoming a de facto global lingua franca. Originating somewhere in Denmark, the Germanic languages diverged through phonetic shifts
+      known as Grimm’s and Verner’s Laws (for example, Latin “pater” in comparison to English “father”). The branch was then divided into three sub-branches: West Germanic,
+      North Germanic (Old Norse), and East Germanic. The East Germanic languages are now extinct, while the other two branches are still widely spoken today.
+    </p>
+    <p style="border: solid 8px #910f16;">
+      Languages: English, Scots, German, Austrian German, Luxembourgish, Afrikaans, Dutch, Swedish, Danish, Norwegian, Icelandic
+    </p>
     </div>
 
     <img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/0/03/Germanic_tribes_%28750BC-1AD%29.png" style="border: solid 10px #910f16;">
 
     <div class="text">
-      <h2 
-      style="color: #000000; 
-      background-color: gray; 
-      border: solid 8px #ffb32f; 
-      padding: 6px 10px; margin-bottom: 12px; 
-      display: inline-block;"
-      >Italic (Romance)</h2>
-      <p
-      style="color: #000000; 
-      background-color: gray; 
-      border: solid 8px #ffb32f; 
-      padding: 6px 10px; margin-bottom: 12px; 
-      display: inline-block; line-height: 1.5;">
-        The Italic branch, also known as Romance languages, evolved from Latin,
-        the language of the Roman Empire. As the empire expanded, Latin spread
-        across Europe, eventually diverging into distinct languages like Spanish,
-        French, Italian, Portuguese, and Romanian. These languages share a common
-        vocabulary and grammar due to their Latin roots. Languages: Latin,
-Spanish,
-French,
-Italian,
-Portuguese,
-Romansh,
-Romagnol,
-Romanian,
-Catalan
-      </p>
+    <h2 style="border: solid 8px #ffb32f; padding: 6px 10px; margin-bottom: 12px; display: inline-block;">Italic (Romance)</h2>
+    <p style="border: solid 8px #ffb32f;">
+    The Italic branch, also known as Romance languages, evolved from Latin, the language of the Roman Empire. As the empire expanded, Latin spread across Europe,
+    eventually diverging into distinct languages like Spanish, French, Italian, Portuguese, and Romanian. These languages share common vocabulary and grammar due to their
+    Latin roots.
+    </p>
+    <p style="border: solid 8px #ffb32f;">
+       Languages: Latin, Spanish, French, Italian, Portuguese, Romansh, Romanian, Catalan, Romagnol (variety of Emilian-Romagnol), Monegasque (variety of Ligurian)
+    </p>
     </div>
 
-    <img src="https://cdn.britannica.com/42/2042-050-BB63526C/Distribution-Romance-languages-Europe.jpg?w=300" style="border: solid 10px #ffb32f;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Idiomas_y_dialectos_romances.png/1920px-Idiomas_y_dialectos_romances.png" style="border: solid 10px #ffb32f;">
 
     <div class="text">
-      <h2 
-      style="color: #000000; 
-      background-color: gray; 
-      border: solid 8px #0f4fdb; 
-      padding: 6px 10px; margin-bottom: 12px; 
-      display: inline-block;"
-      >Balto-Slavic</h2>
-      <p
-      style="color: #000000; 
-      background-color: gray; 
-      border: solid 8px #0f4fdb; 
-      padding: 6px 10px; margin-bottom: 12px; 
-      display: inline-block; line-height: 1.5;">
-        Due to the similar traits in vocabulary, phonetics, and grammar, the Baltic and Slavic languages are usually grouped together. The Slavic branch is the majority, containing Russian, Bulgarian, etc.
-        Meanwhile Baltic comprises of Lithuanian and Latvian. Lithuanian is the most conservative living Indo-European language, keeping many linguistic features lost to time, yet is proven useful in reconstructing PIE.
-        Languages: Latvian,
-Lithuanian,
-Russian,
-Belarusian,
-Polish,
-Czech,
-Slovak,
-Slovene,
-Macedonian,
-Serbo-Croatian,
-Ukrainian,
-Bulgarian
-      </p>
+    <h2 style="border: solid 8px #0f4fdb; padding: 6px 10px; margin-bottom: 12px; display: inline-block;">Balto-Slavic</h2>
+    <p style="border: solid 8px #0f4fdb;">
+    Due to the similar traits in vocabulary, phonetics, and grammar, the Baltic and Slavic languages are usually grouped together. The Slavic branch is the majority,
+    containing Russian, Bulgarian, etc. Meanwhile Baltic comprises of Lithuanian and Latvian. Lithuanian is the most conservative living Indo-European language,
+    keeping many linguistic features lost to time, yet is proven useful in reconstructing PIE.
+    </p>
+    <p style="border: solid 8px #0f4fdb;">
+      Languages: Latvian, Lithuanian, Russian, Belarusian, Polish, Czech, Slovak, Slovene, Macedonian, Serbo-Croatian, Ukrainian, Bulgarian
+    </p>
     </div>
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Balto-Slavic_lng.png" style="border: solid 10px #0f4fdb;">
 
     <div class="text">
-      <h2 
-      style="color: #000000; 
-      background-color: gray; 
-      border: solid 8px #5608c9; 
-      padding: 6px 10px; margin-bottom: 12px; 
-      display: inline-block;"
-      >Indo-Iranian</h2>
-      <p
-      style="color: #000000; 
-      background-color: gray; 
-      border: solid 8px #5608c9; 
-      padding: 6px 10px; margin-bottom: 12px; 
-       display: inline-block; line-height: 1.5;">
-      The biggest branch and THE most diverse of the Indo-European family. Over HUNDREDS of these languages are grouped into the Indo-Aryan and Iranian sub-branches.
-      This branch is widespread within South Asia, from the ouskirts of Iranian plateau, to the Indian Subcontinent, to within the islands of Sri Lanka and the Maldives.
-      The largest of these languages is Hindi, which, along with Urdu, is part of the pluricentral language called Hindustani.
-      </p>
+    <h2 style="border: solid 8px #5608c9; padding: 6px 10px; margin-bottom: 12px; display: inline-block;">Indo-Iranian</h2>
+    <p style="border: solid 8px #5608c9;">
+    The biggest branch and THE most diverse of the Indo-European family. Over HUNDREDS of these languages are grouped into the Indo-Aryan and Iranian sub-branches.
+    This branch is widespread within South Asia, from the ouskirts of Iranian plateau, to the Indian Subcontinent, to within the islands of Sri Lanka and the Maldives.
+    The largest of these languages is Hindi, which, along with Urdu, is part of the pluricentral language called Hindustani. The difference being, that Hindi borrowed
+    more words from Sankrit, while Urdu borrowed from Persian and Arabic.
+    </p>
+    <p style="border: solid 8px #5608c9;">
+    Languages: Persian, Kurdish, Pashto, Hindustani, Bengali, Nepali, Sinahala, Dhivehi
+    </p>
     </div>
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Lenguas_indoiranias.PNG" style="border: solid 10px #5608c9;">
+
+    <div class="text">
+    <h2 style="border: solid 8px #308E46; padding: 6px 10px; margin-bottom: 12px; display: inline-block;">Celtic</h2>
+    <p style="border: solid 8px #308E46;">
+    The Celtic languages are known for their unusual pronunciation in comparison to their Anglicized spellings.
+    During the late Bronze Age, these languages were spoken in several Celtic tribes, spread out across Europe. They used to have distant cousins; examples being
+    Galatian (in what is now Turkey) and Celtiberian (in what is now Spain). Eventually, the ever-expanding Roman Empire backed them off to the British Isles. Today,
+    Breton is the only language spoken in mainland Europe, spoken mainly in Brittany, France. Despite that, they have a rich plethora of literature, with Irish and Welsh
+    being the most prominent surviving Celtic languages.
+    </p>
+    <p style="border: solid 8px #308E46;">
+    Languages: Welsh, Irish, Scottish Gaelic, Manx, Breton, Cornish
+    </p>
+    </div>
+
+    <img src="https://nordicperspective.com/wp-content/uploads/2021/06/map-celtic-influence-europe-min-768x768.png" style="border: solid 10px #308E46;">
+
+    <div class="text">
+    <h2 style="border: solid 8px #782e2e; padding: 6px 10px; margin-bottom: 12px; display: inline-block;">Anatolian</h2>
+    <p style="border: solid 8px #782e2e;">
+    Anatolian is the oldest known branch of Indo-European, and may as well be the first to branch off from P.I.E. It is only one of two extinct branches.
+    These languages were once spoken in Anatolia, which is now called Türkiye (Turkey). The most well-known of these languages is Hittite, which was the first to branch off of
+    Proto-Anatolian, meaning it might be the oldest attestation of an Indo-European language (that we know of). The other languages in this branch are Luwian, Palaic, Lycian, Lydian, and so on.
+    </p>
+    </div>
+
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9SmS6wTlmPC6akE6PFYoI_56S_l7ZlR1KlJxZUD63wOtOfzXi3OErJocktxx8rp3il5PMVH9tscibFKgb-81qJ0Wkf0FSeB5pXf6XKiZspVpm3YklB0I318ARNNfBu0f8Eh7W/s320/tocharian_script.jpg.png" style="border: solid 10px #782e2e;">
+
+    <h2 style="background-color: #00000000; color:#000">and now for...</h2>
+    <h1>Mini-Branches!</h1>
+
+    <div class="text">
+    <h2 style="border: solid 8px #FF0000; padding: 6px 10px; margin-bottom: 12px; display: inline-block;">Albanoid/Albanic</h2>
+    <p style="border: solid 8px #FF0000;">
+    Spoken in Albania and Kosovo (Techically Serbia; partially recognized), this main branch is one of few that are NOT part of any major branch of Indo-European.
+    Instead, Albanian seems to be the surviving member in its group, with no relatives other than the now extinct Messapic language (debated).
+    It is divided into two main "dialects": Gheg and Tosk, the latter being the standard for Albanian.
+    </p>
+    </div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Coat_of_arms_of_Albania.svg/500px-Coat_of_arms_of_Albania.svg.png?20210707214916" style="height: 353px; width: 251px;">
+
+    <div class="text">
+    <h2 style="border: solid 8px #D90012; padding: 6px 10px; margin-bottom: 12px; display: inline-block;">Armenian</h2>
+    <p style="border: solid 8px #D90012;">
+    Armenian is spoken in mainly Armenia and in the surrounding regions of the South Caucasus. Like the others, it the only representative of its branch,
+    the only difference from the others is that, at the very least, the other mini-branch has more than one language. But Armenian? It isn't just it's surviving member,
+    it is the SOLE representative of its OWN BRANCH. Quite literally a one-of-a-kind, with no known relation to any other branch. 
+    </p>
+    </div>
+
+    <img src="https://gisgeography.com/wp-content/uploads/2024/05/Armenia-Map.jpg" style="border: solid 10px #D90012;">
+
+    <div class="text">
+    <h2 style="border: solid 8px #014488; padding: 6px 10px; margin-bottom: 12px; display: inline-block;">Hellenic</h2>
+    <p style="border: solid 8px #014488;">
+    Hellenic is the branch that includes Greek. It is one of, if not the most highly-documented branches of Indo-European, resulting with a rich history of literature
+    that helped represent ideological, philisophical, and educational aspects of ancient Greece. There used to be several varieties of Greek that went extinct,
+    such as Mycenaean Greek (the oldest known form), Ancient Greek, Byzantine Greek, and Koine Greek. Derived from Doric Greek, Tsakonian is the only other variety of
+    Greek still spoken today, which is in risk of dying out due to most speakers being elderly. And unfortunately, it has not gained any national or official recognition,
+    so it is not taught in schools. 
+    </p>
+    </div>
+
+    <img src="https://images.squarespace-cdn.com/content/v1/57125c2c2b8dde54a34b537f/d0947b7c-6e0e-48c2-b278-caaff896fef5/map_of_greek_dialects_by_thumboy21_dckhr0h-fullview.jpg?format=2500w" style="border: solid 10px #014488;">
+
+    <div class="text">
+    <h2 style="border: solid 8px #dca849; padding: 6px 10px; margin-bottom: 12px; display: inline-block;">Tocharian</h2>
+    <p style="border: solid 8px #dca849">
+    Tocharian is the other extinct branch of Indo-European, with its two distinct known languages being Tocharian A (Turfanian) and Tocharian B (Kuchean). These languages were spoken in the Tarim Basin,
+    which is today's northwestern China. It is unique in the sense that it is the only centum branch to be found in Asia. Back then, linguists believed the other centum branches are all in Europe,
+    all while the satemized branches developed tward to Asia.
+    </p>
+    </div>
+
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9SmS6wTlmPC6akE6PFYoI_56S_l7ZlR1KlJxZUD63wOtOfzXi3OErJocktxx8rp3il5PMVH9tscibFKgb-81qJ0Wkf0FSeB5pXf6XKiZspVpm3YklB0I318ARNNfBu0f8Eh7W/s320/tocharian_script.jpg.png" style="border: solid 10px #dca849;">
   </div>
-
-
 </div>
 
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("page").style.marginLeft = "250px";
-
   const btn = document.getElementById("menuBtn");
   btn.innerHTML = "←";
   btn.style.display = "none";
@@ -286,12 +301,10 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("page").style.marginLeft = "0";
-
   const btn = document.getElementById("menuBtn");
   btn.innerHTML = "☰";
   btn.style.display = "block";
 }
-
 </script>
 
 </body>
