@@ -1,44 +1,194 @@
-<!-- comment form -->
-<form id="commentForm">
-    <input type="text" name="username" placeholder="Enter your username (optional)" />
-    <textarea name="comment" placeholder="Write your comment..."></textarea>
-    <button type="submit">Post</button>
-</form>
+<!-- spinny cat -->
+<img id="spinnyCat" src="https://tenor.com/view/cat-spinning-gif-2931293770143981848" 
+     style="position: fixed; width: 150px; z-index: 100; pointer-events: none;" />
 
-<!-- where comments will appear -->
-<div id="comments"></div>
+<!-- COMMENT SECTION -->
+<div class="comment-section" id="commentSection">
+    <h2 style="color: beige;">Hey there! Leave a comment in this page if you'd like. If not, that's alright. Glad you enjoyed the website! It took time, and it may not be the best, but we for sure tried.</h2>
+
+    <form id="commentForm">
+        <input type="text" name="username" placeholder="Enter your username (optional)" />
+        <textarea name="comment" placeholder="Write your comment..."></textarea>
+        <button type="submit">Post</button>
+    </form>
+
+    <div id="comments"></div>
+</div>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent scrollbars if cat hits the edge */
+}
+
+.comment-section {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.9);
+    border-radius: 10px;
+    border: 8px solid transparent; 
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 1;
+}
+
+.comment-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px black;
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#commentForm input,
+#commentForm textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+#commentForm textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#commentForm button {
+    background-color: rgb(26, 143, 26);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+    font-weight: bold;
+}
+
+#commentForm button:hover {
+    background-color: #22c022;
+    box-shadow: 0 0 15px #22c022;
+}
+
+.comment {
+    background-color: #2b2b2b;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 4px solid #22c022;
+}
+
+.comment strong {
+    color: #22c022;
+}
+
+.comment small {
+    display: block;
+    font-size: 11px;
+    opacity: 0.6;
+    margin-top: 5px;
+}
+</style>
 
 <script>
-    // In-memory storage for comments
-    const commentsData = [];
+const commentForm = document.getElementById('commentForm');
+const commentsContainer = document.getElementById('comments');
+const commentSection = document.getElementById('commentSection');
+const nyan = document.getElementById('spinnyCat');
 
-    document.getElementById('commentForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const username = e.target.username.value || "anonymous";
-        const comment = e.target.comment.value;
+// --- 1. NEON FAST SPECTRUM & RAINBOW BORDER LOGIC ---
+let hue = 0;
+setInterval(() => {
+    hue = (hue + 2) % 360; 
+    const neonColor = `hsl(${hue}, 100%, 50%)`;
+    document.body.style.backgroundColor = neonColor; 
+    commentSection.style.borderColor = neonColor; 
+    commentSection.style.boxShadow = `0 0 40px ${neonColor}`; 
+}, 20); 
 
-        if (!comment.trim()) {
-            alert("Comment cannot be empty!");
-            return;
-        }
+// --- 2. BOUNCING NYAN CAT LOGIC (DVD STYLE) ---
+let posX = Math.random() * (window.innerWidth - 150);
+let posY = Math.random() * (window.innerHeight - 100);
+let speedX = 4; // Velocity horizontal
+let speedY = 4; // Velocity vertical
 
-        // Add the comment to the in-memory array
-        commentsData.push({ username, text: comment });
+function animateNyan() {
+    const nyanWidth = nyan.offsetWidth;
+    const nyanHeight = nyan.offsetHeight;
 
-        // Reload comments
-        loadComments();
+    posX += speedX;
+    posY += speedY;
 
-        // Clear the form
-        e.target.reset();
-    });
-
-    function loadComments() {
-        // Render comments from the in-memory array
-        document.getElementById('comments').innerHTML = commentsData
-            .map(c => `<p><strong>${c.username}:</strong> ${c.text}</p>`)
-            .join('');
+    // Bounce off Left/Right edges
+    if (posX + nyanWidth >= window.innerWidth || posX <= 0) {
+        speedX *= -1;
+        // Flip the cat when it hits a wall
+        nyan.style.transform = speedX > 0 ? "scaleX(1)" : "scaleX(-1)";
     }
 
-    // Initial load (empty at first)
+    // Bounce off Top/Bottom edges
+    if (posY + nyanHeight >= window.innerHeight || posY <= 0) {
+        speedY *= -1;
+    }
+
+    nyan.style.left = posX + 'px';
+    nyan.style.top = posY + 'px';
+
+    requestAnimationFrame(animateNyan);
+}
+animateNyan(); // Start the bounce
+
+// --- 3. COMMENT SECTION LOGIC ---
+let commentsData = JSON.parse(localStorage.getItem('pieComments')) || [];
+
+function saveComments() {
+    localStorage.setItem('pieComments', JSON.stringify(commentsData));
+}
+
+function loadComments() {
+    commentsContainer.innerHTML = commentsData
+        .map(c => `
+            <div class="comment">
+                <strong>${escapeHTML(c.username)}</strong>
+                <p>${escapeHTML(c.text)}</p>
+                <small>${c.date}</small>
+            </div>
+        `)
+        .join('');
+}
+
+function escapeHTML(str) {
+    return str.replace(/[&<>"']/g, function (match) {
+        const escape = {'&': "&amp;", '<': "&lt;", '>': "&gt;", '"': "&quot;", "'": "'"};
+        return escape[match];
+    });
+}
+
+commentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = e.target.username.value.trim() || "anonymous";
+    const comment = e.target.comment.value.trim();
+    if (!comment) {
+        alert("Comment cannot be empty!");
+        return;
+    }
+    const newComment = {
+        username,
+        text: comment,
+        date: new Date().toLocaleString()
+    };
+    commentsData.unshift(newComment);
+    saveComments();
     loadComments();
+    commentForm.reset();
+});
+
+loadComments();
 </script>
