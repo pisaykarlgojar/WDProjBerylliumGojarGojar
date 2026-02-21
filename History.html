@@ -1,126 +1,223 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>P.I.E Language Tree - History</title>
-   <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
-   <meta charset="utf-8">
-</head>
-<style>
-a:link, a:visited {
-  background-color: green;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
+<title>P.I.E Language Tree - History</title>
+<link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-a:hover, a:active {
-  background-color: rgb(2, 181, 2);
-}
+<style>
 
 body {
-    font-family: Arial, sans-serif;
-    color: white;
-    margin: 0;
-    padding: 0;
-
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg/1599px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg/1599px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-header {
-    text-align: center;
-    padding: 20px 0;
+.panel {
+  background-color: rgba(230, 214, 184, 0.92);
+  border: 4px solid #c2a46d;
+  border-radius: 6px;
+  padding: 22px 28px;
+  max-width: 900px;
+  margin: 25px auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-.map-image {
-    display: block;
-    margin: 0 auto;
-    width: 1024px;
-    height: 710px;
+.panel h2 {
+  margin-top: 0;
+  color: #4a2e00;
 }
 
-.intro-text {
-    text-align: center;
-    max-width: 90%;
-    margin: 20px auto;
+.panel p {
+  color: #2b1d00;
+  line-height: 1.65;
 }
 
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 200px;
-    padding: 20px;
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+  z-index: 2;
 }
 
-.footer-nav a {
-    background-color: green;
-    color: white;
-    padding: 14px 25px;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    transition: 
-        background-color 0.25s,
-        transform 0.25s,
-        box-shadow 0.5s;
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+  display: block;
+  transition: 0.2s;
 }
 
-.footer-nav a:hover {
-    background-color: rgb(2, 197, 2);
-    transform: scale(1.3);
-    box-shadow: 0 0 12px rgb(1, 255, 2);
+.sidebar a:hover {
+  color: #133646;
 }
 
-      h1, h2 {
-         color: rgb(0, 10, 98);
-         text-align: center;
-      }
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  font-size: 36px;
+}
 
-      p {
-         margin: 0 auto;
-         text-align: center;
-      }
-   </style>
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #455157;
+  color: #ffffff;
+  font-size: 30px;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #ed9238;
+  color: #000000;
+}
+
+#page {
+  transition: margin-left .4s;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  color: #4a2e00;
+  margin-bottom: 10px;
+}
+
+p {
+  max-width: 900px;
+  margin: 20px auto;
+  line-height: 1.6;
+  color: black;
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 95%;
+  height: auto;
+}
+
+.section {
+  margin-bottom: 70px;
+}
+
+</style>
+</head>
 
 <body>
-   <h1>Proto-Indo-European Language Tree</h1>
-    <h2>P.I.E - History of the Indo-European Language Family</h2>
-      <h2>Origin and Spread</h2>
-      <p style="color: rgb(0, 0, 0)">
-         According to the Kurgan Hypothesis, the Indo-European language family is theorized to have originated from a common ancestor around 4500 to 2500 BCE. The speakers of PIE are thought to be the Yamnaya culture, Eurasian nomads who lived in the Pontic-Caspian steppe, which is suggested to be situated between Ukraine and southern Russia. It has also been evident that they had domesticated horses as a fast mode of transport. From there, they migrated and spread across Europe and parts of Asia, leading to the development of various branches of the Indo-European languages.
-      </p> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Indo-European_migrations.jpg" 
-        style="display: block; margin: 0 auto; width: 1024px; height: 422px">
-    <div style="margin-bottom: 80px;">
-      <h2>The subdivisions</h2>
-      <p style="color: rgb(0, 26, 255)">
-         The Indo-European language family consists of several major branches, including Germanic, Romance, Slavic, Indo-Iranian, Celtic, Baltic, Hellenic (Greek), etc. It even has branches extinct in history, such as Anatolian and Tocharian. Nonetheless, it had yet to have international spread across continents due to colonial power. Even by then, each branch still had its own unique characteristics and has further diversified into numerous languages spoken today.
-      </p> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/IndoEuropeanTree.svg/960px-IndoEuropeanTree.svg.png" 
-        style="display: block; margin: 0 auto; background-color: rgb(28, 28, 28);">
-    <div style="margin-bottom: 80px;">
-      <h2>Historical Significance</h2>
-      <p style="color: rgb(255, 255, 255)">
-         This family tree has been crucial in understanding the historical connections between different cultures and civilizations. It has provided insights into ancient migrations, trade routes, and cultural exchanges that have shaped human history. And now with most of its descendants being the most prominent to be spoken by, it still plays a role in communication, such as within foreign political matters, a form of free societal speech, opportunity to negotiate on advancements in civilizations, and so on.
-      </p>
-    <div style="margin-bottom: 80px;">
-      <h2>Conclusion</h2>
-      <p style="color: rgb(255, 255, 255)">
-         The Indo-European language family is a testament to the interconnectedness of human societies throughout history. Its study continues to reveal fascinating insights into our shared linguistic heritage and the evolution of languages over millennia.
-      </p>
-<footer>
-<nav class="footer-nav">
-<a href="Homepage.html">Homepage</a>
-<a href="Main Branches - P.I.E Language Tree.html">Main Branches</a>
-<a href="Core Vocab.html">Core Vocab</a>
-<a href="Implementation of JS.html">Implementation of JS (And Citations!)</a>
-</nav>
-</footer>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">→</a>
+  <a href="Homepage.html">Homepage</a>
+  <a href="Main Branches - P.I.E Language Tree.html">Main Branches</a>
+  <a href="History.html">History</a>
+  <a href="Core Vocab.html">Core Vocab</a>
+  <a href="Implementation of JS.html">Implementation of JS</a>
+  <a href="#">Sign-up</a>
+  <a href="#">Comment Here!</a>
+</div>
+
+<div>
+     <button class="openbtn" onclick="openNav()">☰</button>
+</div>
+
+<div id="page">
+
+<div class="section">
+<div class="panel">
+<h1>P.I.E – History of the Indo-European Language Family</h1>
+</div>
+</div>
+
+<div class="section">
+  <div class="panel">
+    <h2>Origin and Spread</h2>
+    <p>According to the Kurgan Hypothesis, the Indo-European language family originated around
+      4500–2500 BCE. The speakers of PIE are associated with the Yamnaya culture, Eurasian
+      nomads from the Pontic-Caspian steppe. Their domestication of horses enabled rapid
+      migration across Europe and Asia, leading to the diversification of Indo-European languages. 
+      This hypothesis was specifically chosen due to it's relevancy in the existences of such a civilization, although it is still a controversial proposal.</p>
+  </div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Indo-European_migrations.jpg">
+</div>
+
+<div class="section">
+  <div class="panel">
+    <h2>The Subdivisions</h2>
+    <p>The Indo-European family includes major branches such as Germanic, Romance, Slavic,
+      Indo-Iranian, Celtic, Baltic, and Hellenic. Some branches, including Anatolian and Tocharian,
+      are now extinct. Despite divergence, these languages share structural similarities rooted
+      in their common origin. The following image displays the tree of Indo-European languages, 
+      the current surviving ones are highlighted in green, and the extinct ones in red. (As seen in the legend.)</p>
+  </div>
+  <div style="
+   background-color: #3a3a3a; 
+   padding: 20px; 
+   display: inline-block;
+   border: 10px solid #d4573b;">
+  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/IndoEuropeanTree.svg/960px-IndoEuropeanTree.svg.png"
+       style="display: block; max-width: 100%; height: auto;">
+       
+</div>
+</div>
+
+<div class="section">
+   <div class="panel">
+<h2>Historical Significance and Insights upon viewing the above image</h2>
+<p>
+There are some noticeable things that can be observed from the above image, such as the fact that the Indo-European family is quite large, although that is expected,
+for it being the ancestral language of many modern languages.
+</div>
+</div>
+
+
+<div class="section">
+<div class="panel">
+<h2>Conclusion</h2>
+<p>
+The Indo-European family reveals connections among ancient cultures, migrations, and
+trade routes. Today, its descendant languages remain dominant in global communication,
+politics, education, and cultural exchange. Studying this family provides insights into human history, migration patterns,
+and the diversification of such identities. To think that all of these languages, with their unique vocabularies and structures,
+can be traced back to a single common ancestor is truly fascinating. It highlights as to how these are true relics of our ancient past,
+how our way of communicating once united such diverse groups,
+and how our social life is just one, small part of a deep, amalgamated, intricate web of human history.
+
+   The Indo-European language family demonstrates the deep interconnectedness of human
+societies. Its study continues to illuminate our shared linguistic heritage and the evolution
+of languages across millennia.
+</p>
+</div>
+</div>
+
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("page").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("page").style.marginLeft = "0";
+}
+</script>
+
 </body>
 </html>
-
-
-
-
