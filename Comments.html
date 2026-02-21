@@ -1,30 +1,75 @@
-<!-- spinny cat -->
-<img id="spinnyCat" src="https://media.tenor.com/KK4MJz2_YRgAAAAi/cat-spinning.gif" 
-     style="position: fixed; width: 150px; z-index: 100; pointer-events: none;" />
-
-<!-- COMMENT SECTION -->
-<div class="comment-section" id="commentSection">
-    <h2 style="color: beige;">Hey there! Leave a comment in this page if you'd like. If not, that's alright. Glad you enjoyed the website! It took time, and it may not be the best, but we for sure tried.</h2>
-
-    <form id="commentForm">
-        <input type="text" name="username" placeholder="Enter your username (optional)" />
-        <textarea name="comment" placeholder="Write your comment..."></textarea>
-        <button type="submit">Post</button>
-    </form>
-
-    <div id="comments"></div>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 body {
     margin: 0;
     min-height: 100vh;
-    overflow-x: hidden; /* Prevent scrollbars if cat hits the edge */
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
 }
 
+/* SIDEBAR */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  background-color: rgb(20,20,20);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 12px 12px 12px 32px;
+  font-size: 20px;
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #22c022;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 36px;
+}
+
+.openbtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 300;
+  background-color: black;
+  color: white;
+  font-size: 28px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.openbtn:hover {
+  background-color: white;
+  color: black;
+}
+
+#page {
+  transition: margin-left 0.5s;
+}
+
+/* COMMENT SECTION */
 .comment-section {
     max-width: 700px;
-    margin: 60px auto;
+    margin: 80px auto;
     padding: 20px;
     background-color: rgba(26, 26, 26, 0.9);
     border-radius: 10px;
@@ -38,6 +83,7 @@ body {
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 1px 1px 5px black;
+    color: beige;
 }
 
 #commentForm {
@@ -95,61 +141,124 @@ body {
     opacity: 0.6;
     margin-top: 5px;
 }
+
+/* Spinny cat */
+#spinnyCat {
+    position: fixed;
+    width: 150px;
+    z-index: 100;
+    pointer-events: none;
+}
 </style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">→</a>
+  <a href="Homepage.html">Homepage</a>
+  <a href="Main Branches - P.I.E Language Tree.html">Main Branches</a>
+  <a href="History.html">History</a>
+  <a href="Core Vocab.html">Core Vocab</a>
+  <a href="Implementation of JS.html">Implementation of JS</a>
+</div>
+
+<div id="page">
+<button class="openbtn" onclick="openNav()">☰</button>
+
+<!-- Spinny Cat -->
+<img id="spinnyCat"
+src="https://media.tenor.com/KK4MJz2_YRgAAAAi/cat-spinning.gif">
+
+<!-- COMMENT SECTION -->
+<div class="comment-section" id="commentSection">
+    <h2>
+        Hey there! Leave a comment in this page if you'd like. 
+        If not, that's alright. Glad you enjoyed the website! 
+        It took time, and it may not be the best, but we for sure tried.
+    </h2>
+
+    <form id="commentForm">
+        <input type="text" name="username" placeholder="Enter your username (optional)" />
+        <textarea name="comment" placeholder="Write your comment..."></textarea>
+        <button type="submit">Post</button>
+    </form>
+
+    <div id="comments"></div>
+</div>
+
+</div>
 
 <script>
-const commentForm = document.getElementById('commentForm');
-const commentsContainer = document.getElementById('comments');
-const commentSection = document.getElementById('commentSection');
-const nyan = document.getElementById('spinnyCat');
+/* SIDEBAR */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("page").style.marginLeft = "250px";
+}
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("page").style.marginLeft = "0";
+}
 
-// --- 1. NEON FAST SPECTRUM & RAINBOW BORDER LOGIC ---
+/* NEON SPECTRUM BACKGROUND */
+const commentSection = document.getElementById('commentSection');
 let hue = 0;
 setInterval(() => {
-    hue = (hue + 2) % 360; 
+    hue = (hue + 2) % 360;
     const neonColor = `hsl(${hue}, 100%, 50%)`;
-    document.body.style.backgroundColor = neonColor; 
-    commentSection.style.borderColor = neonColor; 
-    commentSection.style.boxShadow = `0 0 40px ${neonColor}`; 
-}, 20); 
+    document.body.style.backgroundColor = neonColor;
+    commentSection.style.borderColor = neonColor;
+    commentSection.style.boxShadow = `0 0 40px ${neonColor}`;
+}, 20);
 
-// --- 2. BOUNCING NYAN CAT LOGIC (DVD STYLE) ---
+/* BOUNCING CAT */
+const nyan = document.getElementById('spinnyCat');
 let posX = Math.random() * (window.innerWidth - 150);
 let posY = Math.random() * (window.innerHeight - 100);
-let speedX = 4; // Velocity horizontal
-let speedY = 4; // Velocity vertical
+let speedX = 4;
+let speedY = 4;
 
 function animateNyan() {
-    const nyanWidth = nyan.offsetWidth;
-    const nyanHeight = nyan.offsetHeight;
+    const w = nyan.offsetWidth;
+    const h = nyan.offsetHeight;
 
     posX += speedX;
     posY += speedY;
 
-    // Bounce off Left/Right edges
-    if (posX + nyanWidth >= window.innerWidth || posX <= 0) {
+    if (posX + w >= window.innerWidth || posX <= 0) {
         speedX *= -1;
-        // Flip the cat when it hits a wall
         nyan.style.transform = speedX > 0 ? "scaleX(1)" : "scaleX(-1)";
     }
 
-    // Bounce off Top/Bottom edges
-    if (posY + nyanHeight >= window.innerHeight || posY <= 0) {
+    if (posY + h >= window.innerHeight || posY <= 0) {
         speedY *= -1;
     }
 
-    nyan.style.left = posX + 'px';
-    nyan.style.top = posY + 'px';
+    nyan.style.left = posX + "px";
+    nyan.style.top = posY + "px";
 
     requestAnimationFrame(animateNyan);
 }
-animateNyan(); // Start the bounce
+animateNyan();
 
-// --- 3. COMMENT SECTION LOGIC ---
+/* COMMENTS WITH LOCAL STORAGE */
+const commentForm = document.getElementById('commentForm');
+const commentsContainer = document.getElementById('comments');
 let commentsData = JSON.parse(localStorage.getItem('pieComments')) || [];
 
 function saveComments() {
     localStorage.setItem('pieComments', JSON.stringify(commentsData));
+}
+
+function escapeHTML(str) {
+    return str.replace(/[&<>"']/g, m => ({
+        '&': "&amp;",
+        '<': "&lt;",
+        '>': "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+    })[m]);
 }
 
 function loadComments() {
@@ -160,18 +269,10 @@ function loadComments() {
                 <p>${escapeHTML(c.text)}</p>
                 <small>${c.date}</small>
             </div>
-        `)
-        .join('');
+        `).join('');
 }
 
-function escapeHTML(str) {
-    return str.replace(/[&<>"']/g, function (match) {
-        const escape = {'&': "&amp;", '<': "&lt;", '>': "&gt;", '"': "&quot;", "'": "'"};
-        return escape[match];
-    });
-}
-
-commentForm.addEventListener('submit', (e) => {
+commentForm.addEventListener('submit', e => {
     e.preventDefault();
     const username = e.target.username.value.trim() || "anonymous";
     const comment = e.target.comment.value.trim();
@@ -179,12 +280,11 @@ commentForm.addEventListener('submit', (e) => {
         alert("Comment cannot be empty!");
         return;
     }
-    const newComment = {
+    commentsData.unshift({
         username,
         text: comment,
         date: new Date().toLocaleString()
-    };
-    commentsData.unshift(newComment);
+    });
     saveComments();
     loadComments();
     commentForm.reset();
@@ -193,3 +293,5 @@ commentForm.addEventListener('submit', (e) => {
 loadComments();
 </script>
 
+</body>
+</html>
