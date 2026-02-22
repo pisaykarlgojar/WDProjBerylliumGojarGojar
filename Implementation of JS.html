@@ -1,112 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
-  <h1 style="color:rgb(255, 255, 255); text-align:center;">Proto-Indo-European Language Tree</h1>
-  <style>
-    a:link, a:visited {
-  background-color: green;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
+<link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-a:hover, a:active {
-  background-color: rgb(2, 181, 2);
-}
+<style>
+
+/* ===== GLOBAL ===== */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: rgb(255, 255, 255);
-    margin: 0;
-    padding: 0;
+  font-family: "Times New Roman";
+  background-color: #000000;
+  margin: 0;
+  color: white;
 }
 
-header {
-    text-align: center;
-    padding: 20px 0;
+/* ===== SIDEBAR ===== */
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #050505;
+  overflow-x: hidden;
+  transition: 0.4s ease;
+  padding-top: 60px;
+  border-right: 2px solid #1f1f1f;
 }
 
-.map-image {
-    display: block;
-    margin: 0 auto;
-    width: 1024px;
-    height: 710px;
+.sidebar a {
+  padding: 12px 8px 12px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+  transition: 0.2s ease;
 }
 
-.intro-text {
-    text-align: center;
-    max-width: 90%;
-    margin: 20px auto;
+.sidebar a:hover {
+  background-color: #111;
+  color: #ffd63f;
 }
 
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 200px;
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* ===== MENU BUTTON ===== */
+
+.openbtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 3;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  font-size: 26px;
+  padding: 10px 16px;
+  border: 2px solid white;
+  transition: 0.3s ease;
+}
+
+.openbtn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* ===== PAGE CONTENT ===== */
+
+#page {
+  transition: margin-left 0.4s ease;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h1 {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 4px solid white;
+  margin-bottom: 30px;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  max-width: 850px;
+  margin: 0 auto 50px auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffd63f;
+}
+
+/* ===== SOURCES BOX ===== */
+
+.sources-box {
+  max-width: 950px;
+  margin: 0 auto;
+  border: 3px solid rgb(91, 42, 38);
+  padding: 35px;
+  background-color: #0b0b0b;
+  text-align: left;
+}
+
+.sources-box h3 {
+  margin-top: 0;
+  color: #ffd63f;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.sources-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  color: white;
+}
+
+.sources-box a {
+  color: white;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.sources-box a:hover {
+  color: #ffd63f;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .sources-box {
     padding: 20px;
+  }
 }
 
-.footer-nav a {
-    background-color: green;
-    color: white;
-    padding: 14px 25px;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    transition: 
-        background-color 0.25s,
-        transform 0.25s,
-        box-shadow 0.5s;
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">→</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Homepage.html">Homepage</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Main Branches - P.I.E Language Tree.html">Main Branches</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/History.html">History</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Core Vocab.html">Core Vocab</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Implementation of JS.html">Implementation of JS and citations!</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Comments.html">Comment Here!</a>
+</div>
+
+<!-- PAGE CONTENT -->
+<div id="page">
+
+<button id="menuBtn" class="openbtn" onclick="openNav()">☰</button>
+
+<h1>Implementation of JavaScript (Including Citations!)</h1>
+
+<div class="subtitle">
+This is it. The end of the our informative journey! 
+Anything any other webpage you see past this one (assuming you did so in chronological order) 
+is NOT for the sake of educating you about the P.I.E language tree. 
+Think of it as the "credits" of a movie. Just go on ahead...
+</div>
+
+<div class="sources-box">
+  <h3>Sources & Citations</h3>
+
+  <p>Stand Still. Stay Silent - webcomic, page 196. (n.d.)<br>
+  <a href="https://sssscomic.com/comic.php?page=196">https://sssscomic.com/comic.php?page=196</a></p>
+
+  <p>Hayden, & Hayden. (2026, February 20). Indo-European language family. World History Encyclopedia.<br>
+  <a href="https://www.worldhistory.org/image/2613/indo-european-language-family/">https://www.worldhistory.org/image/2613/indo-european-language-family/</a></p>
+
+  <p>The development of the Germanic languages. (2015, March 23). Cradle of Civilization.<br>
+  <a href="https://aratta.wordpress.com/2015/03/17/the-development-of-the-germanic-languages/">https://aratta.wordpress.com/2015/03/17/the-development-of-the-germanic-languages/</a></p>
+
+  <p>File:Idiomas y dialectos romances.png - Wikimedia Commons. (2015, April 19).<br>
+  <a href="https://commons.wikimedia.org/wiki/File:Idiomas_y_dialectos_romances.png">https://commons.wikimedia.org/wiki/File:Idiomas_y_dialectos_romances.png</a></p>
+
+  <p>Wikipedia contributors. (2026, February 12). Balto-Slavic languages. Wikipedia.<br>
+  <a href="https://en.wikipedia.org/wiki/Balto-Slavic_languages#/media/File:Balto-Slavic_lng.png">https://en.wikipedia.org/wiki/Balto-Slavic_languages#/media/File:Balto-Slavic_lng.png</a></p>
+
+  <p>Wikipedia contributors. (2026, February 18). Indo-Iranian languages - Wikipedia.<br>
+  <a href="https://en.wikipedia.org/wiki/Indo-Iranian_languages#/media/File:Lenguas_indoiranias.PNG">https://en.wikipedia.org/wiki/Indo-Iranian_languages#/media/File:Lenguas_indoiranias.PNG</a></p>
+
+  <p>Andersson, K. (2024, November 12). Nordic vs. Germanic vs. Celtic: Differences & Links Explained (+ Maps). Nordic Perspective.<br>
+  <a href="https://nordicperspective.com/facts/nordic-vs-germanic-vs-celtic#celtic-the-celtic-cultures-languages">https://nordicperspective.com/facts/nordic-vs-germanic-vs-celtic#celtic-the-celtic-cultures-languages</a></p>
+
+  <p>Discovery in Anatolia of a new language written in cuneiform - Universität Hamburg. (2023, October 27).<br>
+  <a href="https://www.csmc.uni-hamburg.de/publications/mesopotamia/2023-10-27.html">https://www.csmc.uni-hamburg.de/publications/mesopotamia/2023-10-27.html</a></p>
+
+  <p>File:Coat of arms of Albania.svg - Wikimedia Commons. (1998, November 28).<br>
+  <a href="https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Albania.svg">https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Albania.svg</a></p>
+
+  <p>GISGeography. (2025, April 9). Map of Armenia – cities and roads. GIS Geography.<br>
+  <a href="https://gisgeography.com/armenia-map/">https://gisgeography.com/armenia-map/</a></p>
+
+  <p>Exarchopoulos, S. (2024, May 10). Greek Dialects: An In-Depth Analysis of the Spoken Languages of Greece. GHD.<br>
+  <a href="https://www.greecehighdefinition.com/blog/2024/5/10/greek-dialects-an-in-depth-analysis-of-the-spoken-languages-of-greece">https://www.greecehighdefinition.com/blog/2024/5/10/greek-dialects-an-in-depth-analysis-of-the-spoken-languages-of-greece</a></p>
+
+  <p>On Tocharian origins. (n.d.)<br>
+  <a href="https://dienekes.blogspot.com/2011/05/on-tocharian-origins.html">https://dienekes.blogspot.com/2011/05/on-tocharian-origins.html</a></p>
+
+</div>
+
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("page").style.marginLeft = "250px";
+  document.getElementById("menuBtn").style.display = "none";
 }
 
-.footer-nav a:hover {
-    background-color: rgb(2, 197, 2);
-    transform: scale(1.3);
-    box-shadow: 0 0 12px rgb(1, 255, 2);
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("page").style.marginLeft = "0";
+  document.getElementById("menuBtn").style.display = "block";
 }
+</script>
 
-      h1, h2, h3 {
-         color: white;
-         text-align: center;
-      }
-
-      p {
-        color: white;
-         margin: 0 auto;
-         text-align: center;
-        }
-
-      li {
-        margin: 0 auto;
-      text-align: center;
-         }
-   </style>
-<body background-color="black">
-<h2 style="color: rgb(255, 208, 1)">Implementation of JS</h2>
-<p>Javascript was used to randomly choose an Proto-Indo-European word from a hidden list, this is located in the Homepage.</p>
-<div>
-<h2>Citations:</h2>
-<div>
-<h3>Stand Still. Stay Silent - webcomic, page 196. (n.d.). https://www.sssscomic.com/comic.php?page=196</h3>
-<h3>The issue of the Proto-Indo-European language. (2025, January 24). ISKCON Desire Tree | IDT. https://iskcondesiretree.com/profiles/blogs/the-issue-of-the-proto-indo-european-language</h3>
-<h3>Wikipedia contributors. (2025, December 10). Tower of Babel. Wikipedia. https://en.wikipedia.org/wiki/Tower_of_Babel</h3>
-<h3>Starkey, R. (2024, May 13). Indo-European words for Tongue. Starkey Comics. https://starkeycomics.com/2024/05/13/indo-european-words-for-tongue/</h3>
-<h3>File:Indo-European languages map.png - Wikimedia Commons. (2020, June 5). https://commons.wikimedia.org/wiki/File:Indo-European_languages_map.png#</h3>
-<h3>File:Indo-European migrations.jpg - Wikimedia Commons. (2020, November 28). https://commons.wikimedia.org/wiki/File:Indo-European_migrations.jpg</h3>
-<h3>File:Indo-European language tree (with major international languages highlighted).svg - Wikimedia Commons. (2008, October 18). https://commons.wikimedia.org/wiki/File:Indo-European_language_tree_(with_major_international_languages_highlighted).svg</h3>
-<footer>
-<nav class="footer-nav">
-<a href="Homepage.html">Homepage</a>
-<a href="Main Branches - P.I.E Language Tree.html">Main Branches</a>
-<a href="History.html">History</a>
-<a href="Core Vocab.html">Core Vocab</a>
-</footer>
 </body>
-
 </html>
