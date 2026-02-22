@@ -11,7 +11,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* SIDEBAR */
 .sidebar {
   height: 100%;
   width: 0;
@@ -66,7 +65,6 @@ body {
   transition: margin-left 0.5s;
 }
 
-/* COMMENT SECTION */
 .comment-section {
     max-width: 700px;
     margin: 80px auto;
@@ -156,7 +154,7 @@ body {
 
 <body>
 
-<!-- SIDEBAR -->
+
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">→</a>
   <a href="Homepage.html">Homepage</a>
@@ -167,7 +165,7 @@ body {
 </div>
 
 <div id="page">
-<button class="openbtn" onclick="openNav()">☰</button>
+<button class="openbtn" id="menuBtn" onclick="openNav()">☰</button>
 
 <!-- Spinny Cat -->
 <img id="spinnyCat"
@@ -193,17 +191,20 @@ src="https://media.tenor.com/KK4MJz2_YRgAAAAi/cat-spinning.gif">
 </div>
 
 <script>
-/* SIDEBAR */
+
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("page").style.marginLeft = "250px";
+  document.getElementById("menuBtn").style.display = "none";
 }
+
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("page").style.marginLeft = "0";
+  document.getElementById("menuBtn").style.display = "block";
 }
 
-/* NEON SPECTRUM BACKGROUND */
+/* rainbow background */
 const commentSection = document.getElementById('commentSection');
 let hue = 0;
 setInterval(() => {
@@ -214,7 +215,7 @@ setInterval(() => {
     commentSection.style.boxShadow = `0 0 40px ${neonColor}`;
 }, 20);
 
-/* BOUNCING CAT */
+/* spinny bouncy cat/o i i a i o i i i a i */
 const nyan = document.getElementById('spinnyCat');
 let posX = Math.random() * (window.innerWidth - 150);
 let posY = Math.random() * (window.innerHeight - 100);
@@ -244,7 +245,6 @@ function animateNyan() {
 }
 animateNyan();
 
-/* COMMENTS WITH LOCAL STORAGE */
 const commentForm = document.getElementById('commentForm');
 const commentsContainer = document.getElementById('comments');
 let commentsData = JSON.parse(localStorage.getItem('pieComments')) || [];
@@ -297,5 +297,6 @@ loadComments();
 
 </body>
 </html>
+
 
 
