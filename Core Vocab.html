@@ -1,190 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
-  <h1 style="color:rgb(0, 0, 0); text-align:center;">Proto-Indo-European Language Tree</h1>
-  <style>
-    a:link, a:visited {
-  background-color: green;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-a:hover, a:active {
-  background-color: rgb(2, 181, 2);
-}
+<link rel="icon" type="image/x-icon"
+href="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg">
+
+<title>Proto-Indo-European Core Vocabulary</title>
+
+<style>
 
 body {
     font-family: Arial, sans-serif;
-    color: white;
     margin: 0;
     padding: 0;
-
     background-image: url("https://i0.wp.com/starkeycomics.com/wp-content/uploads/2024/05/Indo-European-Words-TONGUE-2-JPG-1-scaled.jpg?ssl=1");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-header {
-    text-align: center;
-    padding: 20px 0;
+a { text-decoration:none; color:white; }
+
+#page {
+  transition: margin-left .4s;
+  padding: 40px 20px;
 }
 
-.map-image {
-    display: block;
-    margin: 0 auto;
-    width: 1024px;
-    height: 710px;
+/* i love adding boxes that makes it easier to read */
+.content-box {
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 1100px;
+  margin: 60px auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+  transition: all .4s ease;
 }
 
-.intro-text {
-    text-align: center;
-    max-width: 90%;
-    margin: 20px auto;
+h1, h2, h3 {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
 }
 
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 200px;
-    padding: 20px;
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 40px auto;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.footer-nav a {
-    background-color: green;
-    color: white;
-    padding: 14px 25px;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    transition: 
-        background-color 0.25s,
-        transform 0.25s,
-        box-shadow 0.5s;
+th {
+  background: #e6e6e6;
+  color: black;
 }
 
-.footer-nav a:hover {
-    background-color: rgb(2, 197, 2);
-    transform: scale(1.3);
-    box-shadow: 0 0 12px rgb(1, 255, 2);
+td, th {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
 }
-    table {
-      border-collapse: collapse;
-      width: 60%;
-      margin: 50px auto;
-    }
-    th, td {
-      border: 1px solid white;
-      padding: 12px;
-      text-align: center;
-    }
-    tr {
-      background-color: black;
-    }
-  </style>
+
+tr:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgb(41,41,41);
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 10px 10px 10px 30px;
+  font-size: 22px;
+  display: block;
+}
+
+.sidebar a:hover { color:#95baca; }
+
+.closebtn {
+  position:absolute;
+  top:0;
+  right:20px;
+  font-size:36px;
+}
+
+.openbtn {
+  position:fixed;
+  top:12px;
+  left:12px;
+  z-index:3;
+  cursor:pointer;
+  background-color:black;
+  color:white;
+  font-size:26px;
+  padding:8px 14px;
+  border:none;
+}
+.openbtn:hover {
+  background:white;
+  color:black;
+}
+
+#pieButton {
+  display:block;
+  margin:25px auto;
+  background:#1a8f1a;
+  color:white;
+  border:none;
+  padding:14px 26px;
+  border-radius:8px;
+  font-size:18px;
+  cursor:pointer;
+  transition:.25s;
+}
+#pieButton:hover {
+  background:#22c022;
+  transform:scale(1.05);
+  box-shadow:0 0 12px #22c022;
+}
+
+#pieOutput {
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:20px;
+  color:white;
+}
+
+</style>
 </head>
+
 <body>
-<h2 style="color:black; text-align:center;">P.I.E - Core Vocab</h2>
-<h3 style="color:black; text-align: center;"><b><i>*Reminder: This is a sample vocabulary table meant for COMPARISON ONLY. Reconstructed vocab are traced using the oldest possible ATTESTED Indo-European Languages that have ever existed. Yes, including the extinct ones.</i></b></h3>
+
+<!-- i'm pretty sure you know what this is at this point-->
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">→</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Homepage.html">Homepage</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Main Branches - P.I.E Language Tree.html">Main Branches</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/History.html">History</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Core Vocab.html">Core Vocab</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Implementation of JS.html">Implementation of JS and citations!</a>
+  <a href="#">Sign-up</a>
+  <a href="https://pisaykarlgojar.github.io/WDProjBerylliumGojarGojar/Comments.html">Comment Here!</a>
+</div>
+
+<div id="page">
+
+<button class="openbtn" id="menuBtn" onclick="openNav()">☰</button>
+
+<!-- yay i get to use my custom box -->
+<div class="content-box">
+
+<h1>Proto-Indo-European Language Tree</h1>
+<h2>P.I.E - Core Vocab</h2>
+
+<h3>
+<b><i>
+Reminder: This is a sample vocabulary table meant for comparison only.
+</i></b>
+</h3>
+
+<button id="pieButton">
+Click to generate a Proto-Indo-European word
+</button>
+
+<p id="pieOutput"></p>
+
 <table>
-    <tr>
-      <th>Meaning</th>
-      <th>Proto-Indo-European (reconstructed)</th>
-      <th style="color:#910f16">Old English</th>
-      <th style="color:#ffb32f">Latin</th>
-      <th style="color:#5608c9">Sanskrit</th>
-    </tr>
-    <tr>
-      <td>"Mother"</td>
-      <td>*méh₂tēr</td>
-      <td style="color:#910f16">mōdor</td>
-      <td style="color:#ffb32f">māter</td>
-      <td style="color:#5608c9">mātṛ</td>
-    </tr>
-    <tr>
-      <td>"One"</td>
-      <td>*(h₁)óynos</td>
-      <td style="color:#910f16">ān</td>
-      <td style="color:#ffb32f">ūnus</td>
-      <td style="color:#5608c9">ekam (from variant *(h₁)óykos)</td>
-    </tr>
-    <tr>
-      <td>"Head"</td>
-      <td>*káput</td>
-      <td style="color:#910f16">hēafod</td>
-      <td style="color:#ffb32f">caput</td>
-      <td style="color:#5608c9">kapā́la</td>
-    </tr>
-    <tr>
-      <td>"Hound/Dog"</td>
-      <td>*ḱwon-</td>
-      <td style="color:#910f16">hund</td>
-      <td style="color:#ffb32f">canis</td>
-      <td style="color:#5608c9">śvā́n</td>
-    </tr>
-    <tr>
-      <td>"Cattle"</td>
-      <td>"*gʷṓws"</td>
-      <td style="color:#910f16">cū</td>
-      <td style="color:#ffb32f">bōs (bovis)</td>
-      <td style="color:#5608c9">gáus (gṓs)</td>
-    </tr>
-    <tr>
-      <td>"To see/To find/To know"</td>
-      <td>"*weyd- (prefix)"</td>
-      <td style="color:#910f16">wit</td>
-      <td style="color:#ffb32f">videō (vidēre)</td>
-      <td style="color:#5608c9">A lot of alternate words, but for the sake of simplicity, we choose "vindáti".</td>
-    </tr>
-    <tr>
-      <td>"Sky Father"</td>
-      <td>"*Dyḗus ph₂tḗr"</td>
-      <td style="color:#910f16">Týr/Tīw</td>
-      <td style="color:#ffb32f">Iūpiter/Iuppiter</td>
-      <td style="color:#5608c9">Dyauspitr</td>
-    </tr>
-    <tr>
-      <td>"Night"</td>
-      <td>"*nokʷts"</td>
-      <td style="color:#910f16">neaht, from niht</td>
-      <td style="color:#ffb32f">nox (noctis)</td>
-      <td style="color:#5608c9">nák</td>
-    </tr>
-    <tr>
-      <td>"Honey/Mead"</td>
-      <td>"*médʰu"</td>
-      <td style="color:#910f16">medu</td>
-      <td style="color:#ffb32f">mēdus</td>
-      <td style="color:#5608c9">mádʰu</td>
-    </tr>
-    <tr>
-      <td>"King/Ruler"</td>
-      <td>"*h₃rḗǵs"</td>
-      <td style="color:#910f16">rīċe (evolved into "rich")</td>
-      <td style="color:#ffb32f">rēx, rēg-</td>
-      <td style="color:#5608c9">rāj-, rājan</td>
-    </tr>
-  </table>
-<div>
-<footer>
-<nav class="footer-nav">
-<a href="Homepage.html">Homepage</a>
-<a href="History.html">History</a>
-<a href="Main Branches - P.I.E Language Tree.html">Main Branches</a>
-<a href="Implementation of JS.html">Implementation of JS (And Citations!)</a>
-</nav>
-</footer>
+<tr>
+<th>Meaning</th>
+<th>Proto-Indo-European</th>
+<th style="color:#910f16">Old English</th>
+<th style="color:#ffb32f">Latin</th>
+<th style="color:#5608c9">Sanskrit</th>
+</tr>
+
+<tr>
+<td>Mother</td>
+<td>*méh₂tēr</td>
+<td style="color:#910f16">mōdor</td>
+<td style="color:#ffb32f">māter</td>
+<td style="color:#5608c9">mātṛ</td>
+</tr>
+
+<tr>
+<td>One</td>
+<td>*(h₁)óynos</td>
+<td style="color:#910f16">ān</td>
+<td style="color:#ffb32f">ūnus</td>
+<td style="color:#5608c9">ekam</td>
+</tr>
+
+<tr>
+<td>Head</td>
+<td>*káput</td>
+<td style="color:#910f16">hēafod</td>
+<td style="color:#ffb32f">caput</td>
+<td style="color:#5608c9">kapā́la</td>
+</tr>
+
+<tr>
+<td>Dog</td>
+<td>*ḱwon</td>
+<td style="color:#910f16">hund</td>
+<td style="color:#ffb32f">canis</td>
+<td style="color:#5608c9">śván</td>
+</tr>
+
+<tr>
+<td>Sky Father</td>
+<td>*Dyḗus ph₂tḗr</td>
+<td style="color:#910f16">Tīw</td>
+<td style="color:#ffb32f">Iuppiter</td>
+<td style="color:#5608c9">Dyáus Pitā</td>
+</tr>
+
+<tr>
+<td>Night</td>
+<td>*nokʷts</td>
+<td style="color:#910f16">niht</td>
+<td style="color:#ffb32f">nox</td>
+<td style="color:#5608c9">nák</td>
+</tr>
+
+<tr>
+<td>Honey/Mead</td>
+<td>*médʰu</td>
+<td style="color:#910f16">medu</td>
+<td style="color:#ffb32f">mēdus</td>
+<td style="color:#5608c9">mádʰu</td>
+</tr>
+
+<tr>
+<td>King</td>
+<td>*h₃rḗǵs</td>
+<td style="color:#910f16">rīċe</td>
+<td style="color:#ffb32f">rēx</td>
+<td style="color:#5608c9">rājan</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<script>
+
+/* SIDEBAR */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("page").style.marginLeft = "250px";
+  document.getElementById("menuBtn").style.display = "none";
+}
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("page").style.marginLeft = "0";
+  document.getElementById("menuBtn").style.display = "block";
+}
+
+/* FULL PIE WORD RANDOMIZER (YOUR EXPANDED VERSION) */
+
+const pieWords = [
+{
+    word: "*méh₂tēr",
+    meaning: "mother",
+    descendants: {
+        sanskrit: "mātṛ",
+        greek: "mḗtēr (μήτηρ)",
+        latin: "māter",
+        oldEnglish: "mōdor"
+    }
+},
+{
+    word: "*ph₂tḗr",
+    meaning: "father",
+    descendants: {
+        sanskrit: "pitṛ",
+        greek: "patḗr (πατήρ)",
+        latin: "pater",
+        oldEnglish: "fæder"
+    }
+},
+{
+    word: "*bhréh₂tēr",
+    meaning: "brother",
+    descendants: {
+        sanskrit: "bhrātṛ",
+        greek: "phrátēr (φράτηρ)",
+        latin: "frāter",
+        oldEnglish: "brōþor"
+    }
+},
+{
+    word: "*swésōr",
+    meaning: "sister",
+    descendants: {
+        sanskrit: "svasṛ",
+        greek: "éor (poetic form)",
+        latin: "soror",
+        oldEnglish: "sweostor"
+    }
+},
+{
+    word: "*ḱwṓn",
+    meaning: "dog / hound",
+    descendants: {
+        sanskrit: "śván",
+        greek: "kýōn (κύων)",
+        latin: "canis",
+        oldEnglish: "hund"
+    }
+},
+{
+    word: "*swéḱs",
+    meaning: "six",
+    descendants: {
+        sanskrit: "ṣaṣ",
+        greek: "héx (ἕξ)",
+        latin: "sex",
+        oldEnglish: "siext"
+    }
+},
+{
+    word: "*septḿ̥",
+    meaning: "seven",
+    descendants: {
+        sanskrit: "sapta",
+        greek: "heptá (ἑπτά)",
+        latin: "septem",
+        oldEnglish: "seofon"
+    }
+},
+{
+    word: "*wódr̥",
+    meaning: "water",
+    descendants: {
+        sanskrit: "udán",
+        greek: "hýdōr (ὕδωρ)",
+        latin: "unda",
+        oldEnglish: "wæter"
+    }
+},
+{
+    word: "*h₂ówis",
+    meaning: "sheep",
+    descendants: {
+        sanskrit: "ávi",
+        greek: "óïs (ὄϊς)",
+        latin: "ovis",
+        oldEnglish: "ēowu"
+    }
+},
+{
+    word: "*gʷḗn",
+    meaning: "woman",
+    descendants: {
+        sanskrit: "jānī",
+        greek: "gunḗ (γυνή)",
+        latin: "fēmina",
+        oldEnglish: "cwēn"
+    }
+},
+{
+    word: "*h₂érōm",
+    meaning: "air/sky",
+    descendants: {
+        sanskrit: "ṛtám",
+        greek: "aḗr (ἀήρ)",
+        latin: "aer",
+        oldEnglish: "lyft"
+    }
+},
+{
+    word: "*Dyḗus ph₂tḗr",
+    meaning: "sky father / father daylight",
+    descendants: {
+        sanskrit: "Dyáus Pitā",
+        greek: "Zeús Patḗr (Ζεύς Πατήρ)",
+        latin: "Iuppiter",
+        oldEnglish: "Tīw"
+    }
+},
+{
+    word: "*h₂éǵros",
+    meaning: "acre / field",
+    descendants: {
+        sanskrit: "ájra",
+        greek: "agrós (ἀγρός)",
+        latin: "ager",
+        oldEnglish: "æcer"
+    }
+},
+{
+    word: "*h₁rowdʰós",
+    meaning: "red",
+    descendants: {
+        sanskrit: "rudhirá",
+        greek: "eruthrós (ἐρυθρός)",
+        latin: "ruber",
+        oldEnglish: "rēad"
+    }
+},
+{
+    word: "*h₃dónts",
+    meaning: "tooth",
+    descendants: {
+        sanskrit: "dantá",
+        greek: "odoús (ὀδούς)",
+        latin: "dēns",
+        oldEnglish: "tōþ"
+    }
+}
+];
+
+document.getElementById("pieButton").addEventListener("click", function() {
+    const random = pieWords[Math.floor(Math.random() * pieWords.length)];
+
+    document.getElementById("pieOutput").innerHTML =
+        `<b>${random.word}</b> — ${random.meaning}<br><br>
+        <b>Sanskrit:</b> ${random.descendants.sanskrit}<br>
+        <b>Greek:</b> ${random.descendants.greek}<br>
+        <b>Latin:</b> ${random.descendants.latin}<br>
+        <b>Old English:</b> ${random.descendants.oldEnglish}`;
+});
+
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
