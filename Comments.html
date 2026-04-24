@@ -157,6 +157,21 @@ body {
     background-color: darkred;
 }
 
+.edit-btn {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    margin-top: 8px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.edit-btn:hover {
+    background-color: #0b6edc;
+}
+    
 /* spinny cat revision o ii a oo ii a i*/
 #spinnyCat {
     position: fixed;
@@ -284,6 +299,30 @@ function deleteComment(index) {
     }
 }
 
+function editComment(index) {
+    const newText = prompt("Edit your comment:", commentsData[index].text);
+    
+    if (newText === null) return; // user pressed cancel
+    
+    const trimmed = newText.trim();
+    if (!trimmed) {
+        alert("Comment cannot be empty!");
+        return;
+    }
+
+    commentsData[index].text = trimmed;
+    commentsData[index].date = new Date().toLocaleString('en-PH', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+
+    saveComments();
+    loadComments();
+}
+    
 /* UPDATED LOAD WITH DELETE BUTTON */
 function loadComments() {
     commentsContainer.innerHTML = commentsData
@@ -294,6 +333,7 @@ function loadComments() {
                 <small>${c.date}</small>
                 <br>
                 <button class="delete-btn" onclick="deleteComment(${i})">Delete</button>
+                <button class="edit-btn" onclick="editComment(${i})">Edit</button>
             </div>
         `).join('');
 }
